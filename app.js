@@ -61,22 +61,24 @@ function limpiar (){
 
 // Función para generar un número aleatorio
 function generarNumeroAleatorio() {
-    let numeroGenerado=Math.floor(Math.random() * numeroMaximo) + 1;
+    let numeroAleatorio=Math.floor(Math.random() * numeroMaximo) + 1;
+console.log(numeroAleatorio);
+    console.log(NumAleatorioDif);
 
 
     //si ya sortemos todos los numeros 
-    if(NumAleatorioDif==numeroMaximo){
+    if(NumAleatorioDif.length==numeroMaximo){
         asignarTextoElemento('p','Ya se sortearon todos los numeros posibles ')
     }
 else {
     //si el numero generao esta incluido en la lista hacemos una operacion si no lo alamacenamos en la lista
-    if(NumAleatorioDif.includes(numeroGenerado)){
-        return generarNumeroAleatorio;
+    if(NumAleatorioDif.includes(numeroAleatorio)){
+        return generarNumeroAleatorio();
      
 
     }else {
-        NumAleatorioDif.push(numeroGenerado);
-        return numeroGenerado;
+        NumAleatorioDif.push(numeroAleatorio);
+        return numeroAleatorio;
     }
 }
 }
